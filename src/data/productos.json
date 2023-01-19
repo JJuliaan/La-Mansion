@@ -1,0 +1,66 @@
+[
+    {
+       "id":1,
+       "title":"America Smash",
+       "price": 1200,
+       "description":"Blen de carne, Cheddar, Cebolla Caramelizada, Rucula, Jalapeño, Relish de Pepino.",
+       "category":"hamburguesas",
+       "image":"https://img.freepik.com/fotos-premium/hamburguesa-carne-artesanal-queso-tocino-cebolla-caramelizada-hojas-rucula-sobre-mesa-madera_74692-158.jpg"
+    },
+    {
+       "id":2,
+       "title":"Texas Smash",
+       "price": 1500,
+       "description":"Doble Blen de carne, Doble Cheddar, Queso Azul, BBQ, Batatas Pai, Coleslaw, Rucula, Tomate.",
+       "category":"hamburguesas",
+       "image":"https://th.bing.com/th/id/OIP.p21KfLZ3iXnBAJ8BVCflSwHaE8?pid=ImgDet&rs=1"
+    },
+    {
+       "id": 3,
+       "title":"Pancho Completo",
+       "price": 200,
+       "description":"Doble salchicha, ketchup, mayo, lluvia de papas",
+       "category":"panchos",
+       "image":"https://th.bing.com/th/id/R.6d0b5214cc2c463e0d2fecf6b837a31d?rik=ooI8yrdMqRhzUQ&pid=ImgRaw&r=0"
+    },
+    {
+       "id":4,
+       "title":"Pancho con Pocho",
+       "price": 500,
+       "description":"Doble Salchicha, queso, jamon, ketchup, mayo, lluvia de papas",
+       "category":"panchos",
+       "image":"https://th.bing.com/th/id/R.027e66da2f2df16c76129a98b638a2c8?rik=Kxe2hm87MV81kA&pid=ImgRaw&r=0"
+    },
+    {
+       "id": 5,
+       "title":"Fugazza",
+       "price": 800,
+       "description":"Masa madre a la piedra con queso muzza, salsa de la casa y cebolla",
+       "category":"pizzas",
+       "image":"https://th.bing.com/th/id/OIP.ZbngHnUSLP_N0YxnDwI2NwHaFj?pid=ImgDet&rs=1"
+    },
+    {
+       "id": 6,
+       "title":"Palmito",
+       "price": 1000,
+       "description":"Masa madre a la piedra con queso muzza, salsa de la casa, salsagolf, palmito, jamon y huevo",
+       "category":"pizzas",
+       "image":"https://th.bing.com/th/id/R.b859b93c20414a45835750d652d4dfd5?rik=cgqq2ST5M%2fbmHw&pid=ImgRaw&r=0"
+    },
+    {
+       "id":7,
+       "title":"Linea Coca",
+       "price": 500,
+       "description":"Coca cola reg, Coca cola zero, Fanta, Sprite, Sprite zero",
+       "category":"bebidas",
+       "image":"https://th.bing.com/th/id/OIP.idV82g8iJADBOzkQbwMtowHaFX?pid=ImgDet&rs=1"
+    },
+    {
+       "id": 8,
+       "title":"Jugos",
+       "price": 450,
+       "description":"Jugo de Naranja, Jugo de Manzana, Limonada, Pomelada, Jugo de Uvas, Jugo de Frutilla",
+       "category":"bebidas",
+       "image":"https://th.bing.com/th/id/R.cb9decb77c298054ffc1da2fa06c5fe6?rik=t7yMIXavhe0ftQ&pid=ImgRaw&r=0"
+    }
+ ]

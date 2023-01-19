@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<ItemListContainer greeting={"Bienvenido A The Mansion"}/>}/>
+        <Route path='/' element={<ItemListContainer greeting={"All Might"}/>}/>
         <Route path='/category/:categoryId' element={<ItemListContainer/>} />
         <Route path='/detail/:id' element={<ItemDetailContainer/>} />
         <Route path='*' element= {<h2>404 Not Found</h2>}/>

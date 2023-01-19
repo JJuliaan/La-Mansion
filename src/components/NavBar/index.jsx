@@ -17,16 +17,16 @@ export default function NavBar(){
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/category/men's clothing">Ropa de Hombre</Link>
+                                <Link className="nav-link" to="/category/hamburguesas">Hamburguesas</Link>
                             </li>
                             <li class="nav-item">
-                                <Link className="nav-link" to="/category/women's clothing">Ropa de Mujer</Link>
+                                <Link className="nav-link" to="/category/panchos">Panchos</Link>
                             </li>
                             <li class="nav-item">
-                                <Link className="nav-link" to="/category/electronics">Electronica</Link>
+                                <Link className="nav-link" to="/category/pizzas">Pizzas</Link>
                             </li>
                             <li class="nav-item">
-                                <Link className="nav-link" to="/category/jewelery">Joyeria</Link>
+                                <Link className="nav-link" to="/category/bebidas">Bebidas</Link>
                             </li>
                         </ul>
                     </div>
