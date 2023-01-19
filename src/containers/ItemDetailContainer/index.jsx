@@ -3,7 +3,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../components/ItemDetail";
-import productosJson from "../../data/productos.json";
+// import productosJson from "../../data/productos.json";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({})
@@ -14,41 +16,24 @@ const ItemDetailContainer = () => {
     
     useEffect(()=> {
         const getIdProducts = async () =>{
-            const idProductos = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(productosJson)
-                },)
-            })
-            idProductos
-            .then(response => {
-                if (id) {
-                    const productosFiltradoId = response.find(productoId => productoId.id.toString() === id)
-                    setDetail(productosFiltradoId)
-                    console.log(productosFiltradoId)
-                } else {
-                    setDetail(response)
-                }
-                })
-                .catch(err => console.log("error"))
-            }
 
+            const docRef = doc(db, "products", id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            const productsDetail = {
+                id: docSnap.id,
+                ...docSnap.data()
+            }
+            setDetail(productsDetail)
+            } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+            }
+        }
 
             getIdProducts()
-
-
-
-        // fetch(`https://fakestoreapi.com/products/${id}`)
-        //     .then(res=>{
-        //         console.log(res)
-        //         return res.json()
-        //     })
-        //     .then(json=>{
-        //         console.log(json)
-        //         setDetail(json)
-        //     })
-        //     .catch((err) => {
-        //         alert("Hubo Un Error")
-        //     });
     }, [id])
 
 

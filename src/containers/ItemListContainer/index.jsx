@@ -3,56 +3,42 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../../components/ItemList";
-import productjson from "../../data/productos.json";
+// import productjson from "../../data/productos.json";
+import { db } from "../../firebase/config";
+import { collection, getDocs, query, where } from "firebase/firestore"; 
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
 
+    // console.log(db);
+
     const {categoryId} = useParams()
-    console.log(categoryId);
+    // console.log(categoryId);
     
-    useEffect(()=> {
+    useEffect(()=> { 
 
         const getProducts = async () => {
-            const obtenerProductos = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(productjson)
-                },)
-            })
-
-            obtenerProductos
-            .then( response => {
-                if (categoryId) {
-                    const productosFiltrados = response.filter(producto => producto.category === categoryId)
-                    console.log(productosFiltrados)
-                    setProducts(productosFiltrados)
-                } else {
-                    setProducts(response)
-                }
-            })
-            .catch(err => console.log("error"))
+            let querySnapshot;
+            if (categoryId) {
+                const q = query(collection(db, "products"), where("category", "==", categoryId));
+                querySnapshot = await getDocs(q);
+            } else {
+                querySnapshot = await getDocs(collection(db, "products"));
+            }
+            const productosFirebase = [];
+            querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data()}`);
+            const product = {
+                id: doc.id,
+                ...doc.data()
+            }
+            productosFirebase.push(product)
+        });
+        setProducts(productosFirebase)
         }
 
         getProducts()
         
-        
-        // fetch('https://fakestoreapi.com/products')
-    //         .then(res=>{
-    //             console.log(res)
-    //             return res.json()
-    //         })
-    //         .then(json=>{
-    //             if(categoryId) { 
-    //                 const filtrador = json.filter(productos => productos.category === categoryId)
-    //                 console.log(filtrador);
-    //                 setProducts(filtrador)
-    //             } else {
-    //                 setProducts(json)
-    //             }
-    //         })
-    //         .catch((err) => {
-    //             alert("Hubo Un Error")
-    //         });
     }, [categoryId])
 
     // // console.log(products);
