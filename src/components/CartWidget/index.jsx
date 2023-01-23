@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Shop } from "../../context/ChangoShop";
 
 const CartWidget = () => {
+
+    const value = useContext(Shop)
+
     return (
         <>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
