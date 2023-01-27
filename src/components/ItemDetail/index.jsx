@@ -1,6 +1,8 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Shop } from "../../context/ChangoShop";
 import ItemCount from "../ItemCount";
 import "./style.css"
 
@@ -10,9 +12,12 @@ const ItemDetail = ({detail}) => {
 
     const [quantity, setQuantity] = useState(0)
 
+    const {addProduct} = useContext(Shop)
+
     const onAdd = (cantidad) => {
         console.log(`Se agrego ${cantidad}`);
         setQuantity(cantidad)
+        addProduct({...detail, quantity: cantidad})
     }
 
     // console.log(detail.title)
@@ -33,7 +38,7 @@ const ItemDetail = ({detail}) => {
                     />
                     :
                     <button className="btn btn-primary p-2">
-                        <Link to="/cart">
+                        <Link to="/cart" style={{color: "white"}}>
                             Go cart
                         </Link>
                     </button>
