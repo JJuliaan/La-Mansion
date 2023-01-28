@@ -11,7 +11,7 @@ const Cart = () => {
   
 
   return(
-    <table class="table table-bordered border-dark ">
+    <table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">Id</th>

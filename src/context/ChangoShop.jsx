@@ -19,6 +19,12 @@ const ChangoShop = ({children}) => {
         }
     }
 
+    const deleteProduct = (product) => {
+        const eliminar = products.find(element => element.id === product.id)
+        eliminar.quantity -= product.quantity
+        setProducts([...products])
+    }
+
     const countChango = () => {
         let cantidadTotal = 0;
         for (const product of products) {
@@ -33,7 +39,7 @@ const ChangoShop = ({children}) => {
     }
 
     return(
-        <Shop.Provider value={{products, addProduct, countChango}}>
+        <Shop.Provider value={{products, addProduct, deleteProduct, countChango}}>
            {children}
         </Shop.Provider>
     )
