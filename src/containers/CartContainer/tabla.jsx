@@ -6,9 +6,6 @@ const Tabla = ({product}) => {
 
   const {deleteProduct} = useContext(Shop)
 
-  const deleteAdd = (id) => {
-    deleteProduct(id)
-  }
 
   return (
     <tr style={{backgroundColor: 	"#D2691E"}}>
@@ -17,7 +14,7 @@ const Tabla = ({product}) => {
           <td>{product.title}</td>
           <td>{product.quantity}</td>
           <td>{product.price}</td>
-          <td><button type='button' style={{backgroundColor: 'red'}} onClick>Remove</button></td>
+          <td><button type='button' style={{backgroundColor: 'red'}} onClick={() => {deleteProduct(product)}}>Remove</button></td>
     </tr>
   )
 }

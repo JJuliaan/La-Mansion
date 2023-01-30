@@ -20,9 +20,7 @@ const ChangoShop = ({children}) => {
     }
 
     const deleteProduct = (product) => {
-        const eliminar = products.find(element => element.id === product.id)
-        eliminar.quantity -= product.quantity
-        setProducts([...products])
+        setProducts(products.filter((item) => item.id !== product.id))
     }
 
     const countChango = () => {
