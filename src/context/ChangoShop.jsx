@@ -36,8 +36,16 @@ const ChangoShop = ({children}) => {
         return products.some(producto => producto.id === id)
     }
 
+    const total = () =>{
+        let total = 0
+        for (const product of products) {
+            total += product.price * product.quantity
+        }
+        return total
+    }
+
     return(
-        <Shop.Provider value={{products, addProduct, deleteProduct, countChango}}>
+        <Shop.Provider value={{products, addProduct, deleteProduct, countChango, total}}>
            {children}
         </Shop.Provider>
     )

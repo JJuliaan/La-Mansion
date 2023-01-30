@@ -8,7 +8,7 @@ export default function NavBar(){
         <>
             <nav className="navbar navbar-expand-lg navbar-scroll shadow-0 border-bottom border-dark">
                 <div className="container">
-                    <Link className="navbar-brand" to="/"><i className="fab fa-mdb fa-4x"></i>Logo</Link>
+                    <Link className="navbar-brand" to="/"><img src="https://th.bing.com/th/id/R.5d17684e91fb23390b1c22f3142728a9?rik=NGaY2%2frPJqv4XQ&pid=ImgRaw&r=0" alt="" style={{width: 51}}/></Link>
                     <button className="navbar-toggler" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
