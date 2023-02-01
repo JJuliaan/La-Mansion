@@ -52,6 +52,13 @@ const FormComp = ({confirmPurchase, formVis, setFormVis}) => {
                                 )}
                                 {errors?.email?.type === "required" && <p>Este campo es requerido</p>}
 
+                                <label>Confirmar Email</label>
+                                <input type= "email" {...register("emailconfirm", { required: true })} />
+                                {errors?.emailconfirm?.register === "email" && (
+                                    <p>El email debe se el mismo que el anterior</p>
+                                )}
+                                {errors?.email?.type === "required" && <p>Este campo es requerido</p>}
+
                                 <label>Telefono</label>
                                 <input type="number" {...register("phone", { minLength: 10, maxLength: 10, required: true })} />
                                 {errors?.phone?.type === "minLength" && (
