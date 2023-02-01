@@ -44,8 +44,12 @@ const ChangoShop = ({children}) => {
         return total
     }
 
+    const cleanCart = () => {
+        setProducts([])
+    }
+
     return(
-        <Shop.Provider value={{products, addProduct, deleteProduct, countChango, total}}>
+        <Shop.Provider value={{products, addProduct, deleteProduct, countChango, total, cleanCart}}>
            {children}
         </Shop.Provider>
     )

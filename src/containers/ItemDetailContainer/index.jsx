@@ -6,6 +6,8 @@ import ItemDetail from "../../components/ItemDetail";
 // import productosJson from "../../data/productos.json";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({})
@@ -41,7 +43,9 @@ const ItemDetailContainer = () => {
         <div>
             {
                 Object.keys(detail).length === 0
-                ? <h2>Loading...</h2>
+                ?   <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
                 : <ItemDetail detail={detail}/>
             }
         </div>

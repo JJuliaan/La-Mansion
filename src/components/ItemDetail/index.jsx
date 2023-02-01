@@ -32,7 +32,7 @@ const ItemDetail = ({detail}) => {
                 {
                     quantity === 0 ?
                     <ItemCount
-                        stock={20} 
+                        stock={detail.stock} 
                         initial={1} 
                         onAdd={onAdd}    
                     />
