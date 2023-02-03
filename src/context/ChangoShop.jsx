@@ -14,6 +14,7 @@ const ChangoShop = ({children}) => {
             const productoRepetido = products.find(element => element.id === product.id)
             productoRepetido.quantity += product.quantity
             setProducts([...products])
+            localStorage.setItem("carrito", JSON.stringify(products))
         } else {
             setProducts([...products, product])
         }

@@ -9,12 +9,15 @@ const FormComp = ({confirmPurchase, formVis, setFormVis}) => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        getValues
       } = useForm();
     
       const onSubmit = (data) => {
         confirmPurchase(data)
+        localStorage.setItem("buyer", JSON.stringify(data))
       }; // your form submit function which will invoke after successful validation
+    
     
       const handleClose = () => {
         setFormVis(false)
@@ -53,12 +56,12 @@ const FormComp = ({confirmPurchase, formVis, setFormVis}) => {
                                 {errors?.email?.type === "required" && <p>Este campo es requerido</p>}
 
                                 <label>Confirmar Email</label>
-                                <input type= "email" {...register("emailconfirm", { required: true })} />
+                                <input type= "email" {...register("emailconfirm", { required: true, validate: (value) => value === getValues().email })} />
                                 {errors?.emailconfirm?.register === "email" && (
-                                    <p>El email debe se el mismo que el anterior</p>
+                                    <p></p>
                                 )}
-                                {errors?.email?.type === "required" && <p>Este campo es requerido</p>}
-
+                                {errors?.emailconfirm?.type === "required" && <p>Este campo es requerido</p>}
+                                {errors?.emailconfirm?.type === "validate" && <p>El email debe se el mismo que el anterior</p>}
                                 <label>Telefono</label>
                                 <input type="number" {...register("phone", { minLength: 10, maxLength: 10, required: true })} />
                                 {errors?.phone?.type === "minLength" && (
