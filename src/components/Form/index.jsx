@@ -3,6 +3,8 @@ import "./styles.css"
 import Modal from 'react-bootstrap/Modal';
 import { useForm } from "react-hook-form"
 import Button from "react-bootstrap/Button"
+// import { Shop } from "../../context/ChangoShop";
+
 
 const FormComp = ({confirmPurchase, formVis, setFormVis}) => {
 
@@ -43,29 +45,29 @@ const FormComp = ({confirmPurchase, formVis, setFormVis}) => {
                                     minLength: 2,
                                     })}
                                 />
-                                {errors?.nombre?.type === "required" && <p>Este campo es requerido</p>}
+                                {errors?.nombre?.type === "required" && <p style={{color:"red"}}>Este campo es requerido</p>}
                                 {errors?.nombre?.type === "maxLength" && (
-                                    <p>El minimo de caracteres es 2</p>
+                                    <p style={{color:"red"}}>El minimo de caracteres es 2</p>
                                 )}
 
                                 <label>Email</label>
                                 <input type= "email" {...register("email", { minLength: 3, required: true })} />
                                 {errors?.email?.type === "minLength" && (
-                                    <p>El email debe poseer minimo 3 caracteres</p>
+                                    <p style={{color:"red"}}>El email debe poseer minimo 3 caracteres</p>
                                 )}
-                                {errors?.email?.type === "required" && <p>Este campo es requerido</p>}
+                                {errors?.email?.type === "required" && <p style={{color:"red"}}>Este campo es requerido</p>}
 
                                 <label>Confirmar Email</label>
                                 <input type= "email" {...register("emailconfirm", { required: true, validate: (value) => value === getValues().email })} />
-                                {errors?.emailconfirm?.register === "email" && (
-                                    <p></p>
-                                )}
-                                {errors?.emailconfirm?.type === "required" && <p>Este campo es requerido</p>}
-                                {errors?.emailconfirm?.type === "validate" && <p>El email debe se el mismo que el anterior</p>}
+                                {errors?.emailconfirm?.type === "required" && <p style={{color:"red"}}>Este campo es requerido</p>}
+                                {errors?.emailconfirm?.type === "validate" && <p style={{color:"red"}}>El email debe se el mismo que el anterior</p>}
                                 <label>Telefono</label>
                                 <input type="number" {...register("phone", { minLength: 10, maxLength: 10, required: true })} />
                                 {errors?.phone?.type === "minLength" && (
-                                    <p>El telefono debe tener minimo 10 digitos</p>
+                                    <p style={{color:"red"}}>El telefono debe tener minimo 10 digitos</p>
+                                )}
+                                {errors?.phone?.type === "maxLength" && (
+                                    <p style={{color:"red"}}>El telefono debe tener maximo 10 digitos</p>
                                 )}
                                 {errors?.phone?.type === "required" && <p>Este campo es requerido</p>}
                         </Modal.Body>

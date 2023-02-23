@@ -19,13 +19,13 @@ export default function NavBar(){
                             <li className="nav-item">
                                 <Link className="nav-link" to="/category/hamburguesas">Hamburguesas</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/category/panchos">Panchos</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/category/pizzas">Pizzas</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/category/bebidas">Bebidas</Link>
                             </li>
                         </ul>

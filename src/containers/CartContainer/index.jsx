@@ -34,8 +34,8 @@ const Cart = () => {
         total: total()
   
       })
-      // setFormVis(true)
       console.log(order);
+
   
       const docRef = await addDoc(collection(db, "orders"), order)
       cleanCart()
@@ -67,7 +67,7 @@ const Cart = () => {
       {
         products.length !== 0 ?
         <>
-          <table class="table table-striped table-dark">
+          <table className="table table-striped table-dark">
             <thead>
               <tr>
                 <th scope="col">Id</th>
